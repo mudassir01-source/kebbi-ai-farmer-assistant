@@ -1,24 +1,35 @@
 import csv
 
-def show_farm_data():
-    print("\n🌾 Kebbi AI Farmer Assistant")
-    print("Crop Economic Information\n")
-
+def load_farm_data():
     with open("farm_data.csv", "r") as file:
-        reader = csv.DictReader(file)
+        return list(csv.DictReader(file))
 
-        for row in reader:
-            crop = row["crop"]
+
+def farmer_assistant():
+    data = load_farm_data()
+
+    print("\n🌾 Kebbi AI Farmer Assistant")
+    print("Available crops:")
+
+    for row in data:
+        print("-", row["crop"])
+
+    choice = input("\nEnter a crop name: ").strip().lower()
+
+    for row in data:
+        if row["crop"].lower() == choice:
             cost = float(row["production_cost"])
             income = float(row["expected_income"])
             profit = income - cost
 
-            print(f"Crop: {crop}")
+            print(f"\nCrop: {row['crop']}")
             print(f"Production Cost: ₦{cost:,.0f}")
             print(f"Expected Income: ₦{income:,.0f}")
             print(f"Expected Profit: ₦{profit:,.0f}")
-            print("-" * 30)
+            return
+
+    print("\nCrop not found. Please choose a crop from the list.")
 
 
 if __name__ == "__main__":
-    show_farm_data()
+    farmer_assistant()
