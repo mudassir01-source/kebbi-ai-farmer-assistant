@@ -1,33 +1,24 @@
-# Kebbi AI Farmer Assistant
-# Early prototype for agricultural support
+import csv
 
-def farmer_assistant():
-    print("🌾 Welcome to Kebbi AI Farmer Assistant")
-    print("1. Crop problem")
-    print("2. Farm profit calculation")
+def show_farm_data():
+    print("\n🌾 Kebbi AI Farmer Assistant")
+    print("Crop Economic Information\n")
 
-    choice = input("Choose an option: ")
+    with open("farm_data.csv", "r") as file:
+        reader = csv.DictReader(file)
 
-    if choice == "1":
-        crop = input("What crop are you growing? ").lower()
-        problem = input("Describe the problem: ").lower()
+        for row in reader:
+            crop = row["crop"]
+            cost = float(row["production_cost"])
+            income = float(row["expected_income"])
+            profit = income - cost
 
-        if "rice" in crop and ("brown" in problem or "yellow" in problem):
-            print("Possible issue: nutrient deficiency or crop disease.")
-            print("Recommendation: Consult an agricultural extension officer.")
-        else:
-            print("Please provide more details or consult an agricultural expert.")
-
-    elif choice == "2":
-        cost = float(input("Enter total farm cost: "))
-        income = float(input("Enter expected income: "))
-
-        profit = income - cost
-        print(f"Estimated profit: ₦{profit:,.2f}")
-
-    else:
-        print("Invalid option. Please try again.")
+            print(f"Crop: {crop}")
+            print(f"Production Cost: ₦{cost:,.0f}")
+            print(f"Expected Income: ₦{income:,.0f}")
+            print(f"Expected Profit: ₦{profit:,.0f}")
+            print("-" * 30)
 
 
 if __name__ == "__main__":
-    farmer_assistant()
+    show_farm_data()
