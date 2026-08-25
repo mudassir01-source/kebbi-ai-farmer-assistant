@@ -141,4 +141,8 @@ GitHub: mudassir01-source
 
 
 This project was developed as part of my learning journey and reflects my interest in combining Economics, Artificial Intelligence, data, and community development to solve real-world problems.
+## 🧪 Testing
 
+The current prototype has been tested in GitHub Codespaces using Python 3.x and runs without errors.
+
+The application successfully loads the sample farm data and provides crop economic information and basic crop-problem recommendations.
