@@ -30,6 +30,27 @@ def show_economic_information(data):
     print("\nCrop not found.")
 
 
+def compare_crop_profits(data):
+    best_crop = None
+    highest_profit = 0
+
+    print("\n📊 Estimated Crop Profit Comparison")
+
+    for row in data:
+        cost = float(row["production_cost"])
+        income = float(row["expected_income"])
+        profit = income - cost
+
+        print(f"{row['crop']}: ₦{profit:,.0f}")
+
+        if profit > highest_profit:
+            highest_profit = profit
+            best_crop = row["crop"]
+
+    print(f"\n🏆 Highest estimated profit: {best_crop}")
+    print(f"Estimated profit: ₦{highest_profit:,.0f}")
+
+
 def get_crop_recommendation():
     crop = input("\nEnter your crop: ")
     problem = input("Describe the problem: ")
@@ -46,15 +67,16 @@ def farmer_assistant():
     print("\n🌾 Kebbi AI Farmer Assistant")
     print("1. Crop economic information")
     print("2. Crop problem recommendation")
+    print("3. Compare crop profits")
 
     choice = input("\nChoose an option: ")
 
     if choice == "1":
         show_economic_information(data)
-
     elif choice == "2":
         get_crop_recommendation()
-
+    elif choice == "3":
+        compare_crop_profits(data)
     else:
         print("\nInvalid option.")
 
