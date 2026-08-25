@@ -114,7 +114,32 @@ Local-language support
 
 
 The long-term goal is to help farmers make better-informed decisions, reduce avoidable losses, improve productivity, and increase income.
+## 🖥️ Demo
 
+The current prototype provides three main functions:
+
+1. **Crop Economic Information** – displays production cost, expected income, and estimated profit.
+2. **Crop Problem Recommendation** – provides basic guidance based on the crop and reported problem.
+3. **Compare Crop Profits** – compares the estimated profit of available crops.
+
+### Example Output
+
+```text
+🌾 Kebbi AI Farmer Assistant
+
+1. Crop economic information
+2. Crop problem recommendation
+3. Compare crop profits
+
+📊 Estimated Crop Profit Comparison
+
+Rice: ₦100,000
+Maize: ₦80,000
+Millet: ₦70,000
+Sorghum: ₦75,000
+
+🏆 Highest estimated profit: Rice
+Estimated profit: ₦100,000
 
 ⚠️ Project Status
 
