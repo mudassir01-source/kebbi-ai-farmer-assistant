@@ -77,7 +77,23 @@ CSV data
 Basic data processing and economic calculations
 
 
+## 🚀 How It Works
 
+The current prototype provides four main functions:
+
+### 1. Crop Economic Information
+Displays sample production costs, expected income, and estimated profit for selected crops.
+
+### 2. Crop Problem Recommendation
+Allows a user to enter a crop and describe a problem, then provides basic guidance based on predefined recommendations.
+
+### 3. Compare Crop Profits
+Compares the estimated profits of the available crops and identifies the crop with the highest estimated profit.
+
+### 4. Farm Profit Calculator
+Allows a user to enter a planned investment and estimates potential income and profit using the sample crop data.
+
+> **Note:** The current recommendation system is rule-based, and the financial figures are sample data for demonstration. Future versions will integrate reliable real-world agricultural data and more advanced AI capabilities.
 
 🌱 Future Development
 
