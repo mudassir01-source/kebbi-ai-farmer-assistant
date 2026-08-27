@@ -1,5 +1,11 @@
-crop,production_cost,expected_income,expected_profit
-Rice,150000,250000,100000
-Maize,100000,180000,80000
-Millet,90000,160000,70000
-Sorghum,95000,170000,75000
+crop,production_cost,expected_income
+Rice,150000,250000
+Maize,120000,200000
+Millet,100000,170000
+Sorghum,110000,185000
+Wheat,140000,230000
+Groundnut,130000,220000
+Cowpea,115000,195000
+Sesame,125000,215000
+Onion,160000,280000
+Tomato,150000,260000
